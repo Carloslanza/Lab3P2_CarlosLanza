@@ -13,6 +13,8 @@ public class Pokemon {
 String nombre;
 int entrada;
 boolean atrapado;
+    Pokeball pokebolaAtrapado;
+    int numeroPokedex;
 
     public Pokemon(String nombre, int entrada, boolean atrapado) {
         this.nombre = nombre;

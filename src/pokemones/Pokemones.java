@@ -35,7 +35,7 @@ public class Pokemones {
 
             System.out.print("Elija una opción: ");
             option = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer de entrada
+            scanner.nextLine(); 
 
             switch (option) {
                 case 1:
@@ -69,13 +69,13 @@ public class Pokemones {
     private static void createPokemon() {
         System.out.println("Elija el tipo de Pokémon (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
         int typeOption = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer de entrada
+        scanner.nextLine(); 
 
         System.out.print("Nombre del Pokémon: ");
         String name = scanner.nextLine();
         System.out.print("Número de Pokedex: ");
         int pokedexNumber = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer de entrada
+        scanner.nextLine(); 
         System.out.print("Naturaleza del Pokémon: ");
         String nature = scanner.nextLine();
 
@@ -126,7 +126,7 @@ public class Pokemones {
     private static void deletePokemon() {
         System.out.println("Elija el tipo de Pokémon a eliminar (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
         int typeOption = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer de entrada
+        scanner.nextLine(); 
 
         ArrayList<Pokemon> filteredList = new ArrayList<>();
 

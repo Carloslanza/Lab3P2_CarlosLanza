@@ -5,10 +5,91 @@
  */
 package pokemones;
 
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author carloslanza
  */
-public class GrassType {
-    
+public class GrassType extends Pokemones {
+
+    String habitat;
+    int dominino;
+    int dominioPlantas;
+    public GrassType(String habitat, int dominino) {
+        this.habitat = habitat;
+        this.dominino = dominino;
+    }
+
+    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
+
+    public int getDominino() {
+        return dominino;
+    }
+
+    public void setDominino(int dominino) {
+        this.dominino = dominino;
+    }
+
+    public static ArrayList<Pokemon> getPokemonList() {
+        return pokemonList;
+    }
+
+    public static void setPokemonList(ArrayList<Pokemon> pokemonList) {
+        Pokemones.pokemonList = pokemonList;
+    }
+
+    public static ArrayList<Pokeball> getPokeballList() {
+        return pokeballList;
+    }
+
+    public static void setPokeballList(ArrayList<Pokeball> pokeballList) {
+        Pokemones.pokeballList = pokeballList;
+    }
+
+    public static Scanner getScanner() {
+        return scanner;
+    }
+
+    public static void setScanner(Scanner scanner) {
+        Pokemones.scanner = scanner;
+    }
+
+    public static Random getRandom() {
+        return random;
+    }
+
+    public static void setRandom(Random random) {
+        Pokemones.random = random;
+    }
+
+    @Override
+    public String toString() {
+        return "GrassType{" + "habitat=" + habitat + ", dominino=" + dominino + '}';
+    }
+
 }

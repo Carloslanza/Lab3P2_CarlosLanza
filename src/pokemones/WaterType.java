@@ -12,11 +12,17 @@ package pokemones;
 public class WaterType extends Pokemon {
 boolean vivir;
 int rapidez;
+    boolean puedeVivirFueraDelAgua;
+    int rapidezNadar;
 
     public WaterType(boolean vivir, int rapidez, String nombre, int entrada, boolean atrapado) {
         super(nombre, entrada, atrapado);
         this.vivir = vivir;
         this.rapidez = rapidez;
+    }
+
+    WaterType(String name, int pokedexNumber, String nature, boolean canLiveOutsideWater, int swimSpeed) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public boolean isVivir() {
@@ -57,6 +63,11 @@ int rapidez;
 
     public void setAtrapado(boolean atrapado) {
         this.atrapado = atrapado;
+    }
+
+    @Override
+    public String toString() {
+        return "WaterType{" + "vivir=" + vivir + ", rapidez=" + rapidez + '}';
     }
 
 }
