@@ -14,29 +14,12 @@ import java.util.Scanner;
  * @author carloslanza
  */
 public class GrassType extends Pokemones {
+String habitat;
+int dominino;
 
-    String habitat;
-    int dominino;
-    int dominioPlantas;
     public GrassType(String habitat, int dominino) {
         this.habitat = habitat;
         this.dominino = dominino;
-    }
-
-    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    GrassType(String name, int pokedexNumber, String nature, String habitat, int plantDominance) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getHabitat() {

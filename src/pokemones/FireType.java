@@ -10,17 +10,11 @@ package pokemones;
  * @author carloslanza
  */
 public class FireType extends Pokemon {
-
-    int potencia;
-    int potenciaLlamas;
+int potencia;   
 
     public FireType(int potencia, String nombre, int entrada, boolean atrapado) {
         super(nombre, entrada, atrapado);
         this.potencia = potencia;
-    }
-
-    FireType(String name, int pokedexNumber, String nature, int flamePower) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getPotencia() {
