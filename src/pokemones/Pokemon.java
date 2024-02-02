@@ -10,5 +10,43 @@ package pokemones;
  * @author carloslanza
  */
 public class Pokemon {
-    
+String nombre;
+int entrada;
+boolean atrapado;
+
+    public Pokemon(String nombre, int entrada, boolean atrapado) {
+        this.nombre = nombre;
+        this.entrada = entrada;
+        this.atrapado = atrapado;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(int entrada) {
+        this.entrada = entrada;
+    }
+
+    public boolean isAtrapado() {
+        return atrapado;
+    }
+
+    public void setAtrapado(boolean atrapado) {
+        this.atrapado = atrapado;
+    }
+
+    @Override
+    public String toString() {
+        return "Pokemon{" + "nombre=" + nombre + ", entrada=" + entrada + ", atrapado=" + atrapado + '}';
+    }
+
 }
