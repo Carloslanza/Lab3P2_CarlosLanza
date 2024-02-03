@@ -10,19 +10,20 @@ package pokemones;
  * @author carloslanza
  */
 public class FireType extends Pokemon {
-int potencia;   
+
+    int potenciaLlamas;
 
     public FireType(int potencia, String nombre, int entrada, boolean atrapado) {
         super(nombre, entrada, atrapado);
-        this.potencia = potencia;
+        this.potenciaLlamas = potencia;
     }
 
     public int getPotencia() {
-        return potencia;
+        return potenciaLlamas;
     }
 
     public void setPotencia(int potencia) {
-        this.potencia = potencia;
+        this.potenciaLlamas = potencia;
     }
 
     public String getNombre() {
@@ -51,7 +52,7 @@ int potencia;
 
     @Override
     public String toString() {
-        return "FireType{" + "potencia=" + potencia + '}';
+        return "FireType{" + "potencia=" + potenciaLlamas + '}';
     }
 
 }

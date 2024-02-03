@@ -10,8 +10,11 @@ package pokemones;
  * @author carloslanza
  */
 public class WaterType extends Pokemon {
-boolean vivir;
-int rapidez;
+
+    boolean vivir;
+    int rapidez;
+    boolean puedeVivirFueraDelAgua;
+    int rapidezNadar;
 
     public WaterType(boolean vivir, int rapidez, String nombre, int entrada, boolean atrapado) {
         super(nombre, entrada, atrapado);

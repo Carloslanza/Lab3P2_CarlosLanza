@@ -10,9 +10,10 @@ package pokemones;
  * @author carloslanza
  */
 public class Pokemon {
-String nombre;
-int entrada;
-boolean atrapado;
+
+    String nombre;
+    int entrada;
+    boolean atrapado;
     Pokeball pokebolaAtrapado;
     int numeroPokedex;
 

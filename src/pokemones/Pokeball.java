@@ -10,14 +10,15 @@ package pokemones;
  * @author carloslanza
  */
 public class Pokeball {
-String color;
-int numeroSerie;
-int eficiencia;
+
+    String color;
+    int numeroSerie;
+    int eficienciaAtrapado;
 
     public Pokeball(String color, int numeroSerie, int eficiencia) {
         this.color = color;
         this.numeroSerie = numeroSerie;
-        this.eficiencia = eficiencia;
+        this.eficienciaAtrapado = eficiencia;
     }
 
     public String getColor() {
@@ -37,11 +38,11 @@ int eficiencia;
     }
 
     public int getEficiencia() {
-        return eficiencia;
+        return eficienciaAtrapado;
     }
 
     public void setEficiencia(int eficiencia) {
-        this.eficiencia = eficiencia;
+        this.eficienciaAtrapado = eficiencia;
     }
 
 }
