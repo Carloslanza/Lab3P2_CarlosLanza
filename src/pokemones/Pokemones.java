@@ -24,16 +24,16 @@ public class Pokemones {
         int opcion;
 
         do {
-            System.out.println("\nMENÚ:");
-            System.out.println("1. Crear Pokémon");
+            System.out.println("\n----MENU----");
+            System.out.println("1. Crear Pokemon");
             System.out.println("2. Crear Pokebola");
-            System.out.println("3. Listar Pokémon");
-            System.out.println("4. Eliminar Pokémon");
-            System.out.println("5. Capturar Pokémon");
-            System.out.println("6. Modificar Pokémon");
+            System.out.println("3. Listar Pokemon");
+            System.out.println("4. Eliminar Pokmon");
+            System.out.println("5. Capturar Pokemon");
+            System.out.println("6. Modificar Pokemon");
             System.out.println("7. Salir");
 
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
             opcion = scanner.nextInt();
             scanner.nextLine(); 
 
@@ -60,23 +60,23 @@ public class Pokemones {
                     System.out.println("¡Hasta luego!");
                     break;
                 default:
-                    System.out.println("Opción no válida. Inténtelo de nuevo.");
+                    System.out.println("Opcion no valida. Intentelo de nuevo.");
                     break;
             }
         } while (opcion != 7);
     }
 
     private static void crearPokemon() {
-        System.out.println("Elija el tipo de Pokémon (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
+        System.out.println("Elija el tipo de Pokemon (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
         int tipoPokemon = scanner.nextInt();
         scanner.nextLine(); 
 
-        System.out.print("Nombre del Pokémon: ");
+        System.out.print("Nombre del Pokemon: ");
         String nombre = scanner.nextLine();
-        System.out.print("Número de Pokedex: ");
+        System.out.print("Numero de Pokedex: ");
         int numeroPokedex = scanner.nextInt();
         scanner.nextLine(); 
-        System.out.print("Naturaleza del Pokémon: ");
+        System.out.print("Naturaleza del Pokemon: ");
         String naturaleza = scanner.nextLine();
 
         switch (tipoPokemon) {
@@ -94,11 +94,19 @@ public class Pokemones {
                 pokemonList.add(new WaterType(puedeVivirFueraDelAgua, rapidezNadar, nombre, rapidezNadar, puedeVivirFueraDelAgua));
                 break;
             case 3:
+                System.out.println("Ingrese su habitat");
+                String habitat = scanner.nextLine();
+                System.out.println("Ingrese su dominio de plantas");
+                int dominioPlantas = scanner.nextInt();
+                int entrada=0;
+                System.out.print("¿Puede vivir fuera del agua? (true/false): ");
+                boolean VivirFueraDelAgua = Boolean.parseBoolean(scanner.next());
+                pokemonList.add(new GrassType(habitat, dominioPlantas, nombre, entrada, VivirFueraDelAgua));
                 break;
             default:
-                System.out.println("Opción no válida.");
+                System.out.println("Opcion no valida.");
         }
-        System.out.println("Pokémon creado exitosamente.");
+        System.out.println("Pokemon creado exitosamente.");
     }
 
     private static void crearPokebola() {
@@ -113,14 +121,14 @@ public class Pokemones {
     }
 
     private static void listarPokemon() {
-        System.out.println("\nListado de Pokémon:");
+        System.out.println("\nListado de Pokemon:");
         for (Pokemon pokemon : pokemonList) {
             System.out.println(pokemon.nombre + " - " + pokemon.getClass().getSimpleName());
         }
     }
 
     private static void eliminarPokemon() {
-        System.out.println("Elija el tipo de Pokémon a eliminar (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
+        System.out.println("Elija el tipo de Pokemon a eliminar (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
         int tipoPokemon = scanner.nextInt();
         scanner.nextLine(); 
 
@@ -137,11 +145,11 @@ public class Pokemones {
                 listaFiltrada = filtrarListaPokemon(GrassType.class);
                 break;
             default:
-                System.out.println("Opción no válida.");
+                System.out.println("Opcion no valida.");
         }
 
         if (!listaFiltrada.isEmpty()) {
-            System.out.println("Seleccione el índice del Pokémon a eliminar:");
+            System.out.println("Seleccione el indice del Pokemon a eliminar:");
             for (int i = 0; i < listaFiltrada.size(); i++) {
                 System.out.println(i + ". " + listaFiltrada.get(i).nombre);
             }
@@ -149,12 +157,12 @@ public class Pokemones {
             int indiceEliminar = scanner.nextInt();
             if (indiceEliminar >= 0 && indiceEliminar < listaFiltrada.size()) {
                 pokemonList.remove(listaFiltrada.get(indiceEliminar));
-                System.out.println("Pokémon eliminado exitosamente.");
+                System.out.println("Pokemon eliminado exitosamente.");
             } else {
-                System.out.println("Índice no válido.");
+                System.out.println("Indice no valido.");
             }
         } else {
-            System.out.println("No hay Pokémon de ese tipo para eliminar.");
+            System.out.println("No hay Pokemon de ese tipo para eliminar.");
         }
     }
 
@@ -170,7 +178,7 @@ public class Pokemones {
 
     private static void capturarPokemon() {
         if (pokemonList.isEmpty() || pokemonList.isEmpty()) {
-            System.out.println("No hay suficientes Pokebolas o Pokémon para realizar la captura.");
+            System.out.println("No hay suficientes Pokebolas o Pokemon para realizar la captura.");
             return;
         }
 
@@ -181,7 +189,7 @@ public class Pokemones {
 
         int indicePokebolaSeleccionada = scanner.nextInt();
         if (indicePokebolaSeleccionada < 0 || indicePokebolaSeleccionada >= pokemonList.size()) {
-            System.out.println("Índice de Pokebola no válido.");
+            System.out.println("Indice de Pokebola no valido.");
             return;
         }
 
@@ -189,7 +197,7 @@ public class Pokemones {
 
         ArrayList<Pokemon> pokemonesDisponibles = obtenerPokemonesDisponibles();
         if (pokemonesDisponibles.isEmpty()) {
-            System.out.println("No hay Pokémon disponibles para capturar en este momento.");
+            System.out.println("No hay Pokemon disponibles para capturar en este momento.");
             return;
         }
 
@@ -203,7 +211,7 @@ public class Pokemones {
         } else if (eleccionCaptura == 2) {
             System.out.println("Ha huido del encuentro.");
         } else {
-            System.out.println("Opción no válida.");
+            System.out.println("Opcion no válida.");
         }
     }
 
@@ -236,7 +244,7 @@ public class Pokemones {
             pokemon.atrapado = true;
             pokemon.pokebolaAtrapado = pokebola;
             pokeballList.remove(pokebola);
-            System.out.println("¡Has capturado a " + pokemon.nombre + " con éxito!");
+            System.out.println("¡Has capturado a " + pokemon.nombre + " con exito!");
         } else {
             pokemonList.remove(pokebola);
             System.out.println("No se pudo capturar a " + pokemon.nombre + ".");
@@ -245,11 +253,11 @@ public class Pokemones {
 
     private static void modificarPokemon() {
         if (pokemonList.isEmpty()) {
-            System.out.println("No hay Pokémon para modificar.");
+            System.out.println("No hay Pokemon para modificar.");
             return;
         }
 
-        System.out.println("Seleccione el tipo de Pokémon a modificar (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
+        System.out.println("Seleccione el tipo de Pokemon a modificar (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
         int opcionTipo = scanner.nextInt();
         scanner.nextLine(); 
 
@@ -266,11 +274,11 @@ public class Pokemones {
                 listaFiltrada = filtrarListaPokemon(GrassType.class);
                 break;
             default:
-                System.out.println("Opción no válida.");
+                System.out.println("Opcion no valida.");
         }
 
         if (!listaFiltrada.isEmpty()) {
-            System.out.println("Seleccione el índice del Pokémon a modificar:");
+            System.out.println("Seleccione el indice del Pokemon a modificar:");
             for (int i = 0; i < listaFiltrada.size(); i++) {
                 System.out.println(i + ". " + listaFiltrada.get(i).nombre);
             }
@@ -279,21 +287,21 @@ public class Pokemones {
             if (indiceModificar >= 0 && indiceModificar < listaFiltrada.size()) {
                 modificarAtributosPokemon(listaFiltrada.get(indiceModificar));
             } else {
-                System.out.println("Índice no válido.");
+                System.out.println("Indice no valido.");
             }
         } else {
-            System.out.println("No hay Pokémon de ese tipo para modificar.");
+            System.out.println("No hay Pokemon de ese tipo para modificar.");
         }
     }
 
     private static void modificarAtributosPokemon(Pokemon pokemon) {
         System.out.println("Seleccione el atributo a modificar:");
         System.out.println("1. Nombre");
-        System.out.println("2. Número de Pokedex");
-        System.out.println("3. Atributo específico del tipo de Pokémon");
+        System.out.println("2. Numero de Pokedex");
+        System.out.println("3. Atributo especifico del tipo de Pokemon");
 
         int eleccionAtributo = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer de entrada
+        scanner.nextLine(); 
 
         switch (eleccionAtributo) {
             case 1:
@@ -303,10 +311,10 @@ public class Pokemones {
                 System.out.println("Nombre modificado exitosamente.");
                 break;
             case 2:
-                System.out.print("Nuevo número de Pokedex: ");
+                System.out.print("Nuevo numero de Pokedex: ");
                 int nuevoNumeroPokedex = scanner.nextInt();
                 pokemon.numeroPokedex = nuevoNumeroPokedex;
-                System.out.println("Número de Pokedex modificado exitosamente.");
+                System.out.println("Numero de Pokedex modificado exitosamente.");
                 break;
             case 3:
                 if (pokemon instanceof FireType) {
@@ -318,7 +326,7 @@ public class Pokemones {
                 }
                 break;
             default:
-                System.out.println("Opción no válida.");
+                System.out.println("Opcion no valida.");
         }
     }
 
@@ -340,7 +348,7 @@ public class Pokemones {
     }
 
     private static void modificarAtributosGrassType(GrassType grassType) {
-        System.out.print("Nuevo hábitat del Pokémon: ");
+        System.out.print("Nuevo habitat del Pokémon: ");
         String nuevoHabitat = scanner.nextLine();
         System.out.print("Nuevo dominio sobre las plantas (0 - 100): ");
         int nuevoDominioPlantas = scanner.nextInt();
