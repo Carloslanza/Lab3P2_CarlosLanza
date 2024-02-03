@@ -13,8 +13,6 @@ public class WaterType extends Pokemon {
 
     boolean vivir;
     int rapidez;
-    boolean puedeVivirFueraDelAgua;
-    int rapidezNadar;
 
     public WaterType(boolean vivir, int rapidez, String nombre, int entrada, boolean atrapado) {
         super(nombre, entrada, atrapado);
@@ -38,33 +36,9 @@ public class WaterType extends Pokemon {
         this.rapidez = rapidez;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEntrada() {
-        return entrada;
-    }
-
-    public void setEntrada(int entrada) {
-        this.entrada = entrada;
-    }
-
-    public boolean isAtrapado() {
-        return atrapado;
-    }
-
-    public void setAtrapado(boolean atrapado) {
-        this.atrapado = atrapado;
-    }
-
     @Override
     public String toString() {
-        return "WaterType{" + "vivir=" + vivir + ", rapidez=" + rapidez + '}';
+        return super.toString() + "WaterType{" + "vivir=" + vivir + ", rapidez=" + rapidez + '}';
     }
 
 }

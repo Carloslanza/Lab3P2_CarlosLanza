@@ -13,15 +13,15 @@ import java.util.Scanner;
  *
  * @author carloslanza
  */
-public class GrassType extends Pokemones {
+public class GrassType extends Pokemon {
 
     String habitat;
-    int dominino;
     int dominioPlantas;
 
-    public GrassType(String habitat, int dominino) {
+    public GrassType(String habitat, int dominioPlantas, String nombre, int entrada, boolean atrapado) {
+        super(nombre, entrada, atrapado);
         this.habitat = habitat;
-        this.dominino = dominino;
+        this.dominioPlantas = dominioPlantas;
     }
 
     public String getHabitat() {
@@ -32,49 +32,17 @@ public class GrassType extends Pokemones {
         this.habitat = habitat;
     }
 
-    public int getDominino() {
-        return dominino;
+    public int getDominioPlantas() {
+        return dominioPlantas;
     }
 
-    public void setDominino(int dominino) {
-        this.dominino = dominino;
-    }
-
-    public static ArrayList<Pokemon> getPokemonList() {
-        return pokemonList;
-    }
-
-    public static void setPokemonList(ArrayList<Pokemon> pokemonList) {
-        Pokemones.pokemonList = pokemonList;
-    }
-
-    public static ArrayList<Pokeball> getPokeballList() {
-        return pokeballList;
-    }
-
-    public static void setPokeballList(ArrayList<Pokeball> pokeballList) {
-        Pokemones.pokeballList = pokeballList;
-    }
-
-    public static Scanner getScanner() {
-        return scanner;
-    }
-
-    public static void setScanner(Scanner scanner) {
-        Pokemones.scanner = scanner;
-    }
-
-    public static Random getRandom() {
-        return random;
-    }
-
-    public static void setRandom(Random random) {
-        Pokemones.random = random;
+    public void setDominioPlantas(int dominioPlantas) {
+        this.dominioPlantas = dominioPlantas;
     }
 
     @Override
     public String toString() {
-        return "GrassType{" + "habitat=" + habitat + ", dominino=" + dominino + '}';
+        return "GrassType{" + "habitat=" + habitat + ", dominioPlantas=" + dominioPlantas + '}';
     }
 
 }

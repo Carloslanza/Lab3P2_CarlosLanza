@@ -11,11 +11,12 @@ package pokemones;
  */
 public class Pokemon {
 
-    String nombre;
-    int entrada;
-    boolean atrapado;
-    Pokeball pokebolaAtrapado;
-    int numeroPokedex;
+    protected String nombre;
+    protected int entrada;
+    protected boolean atrapado;
+    protected Pokeball pokebolaAtrapado;
+    protected int numeroPokedex;
+    
 
     public Pokemon(String nombre, int entrada, boolean atrapado) {
         this.nombre = nombre;
